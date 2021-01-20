@@ -14,6 +14,7 @@ import Appointment from "components/Appointment";
 import Header from "components/Appointment/header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
+import Confirm from "components/Appointment/Confirm"
 
 const days = [
   {
@@ -138,3 +139,8 @@ storiesOf("Appointment", module)
     onEdit={action("onEdit")}
     onDelete={action("onDelete")}
   />)
+  .add("Confirm", () => <Confirm 
+    message="Delete the Appointment?"
+    onCancel={action("onCancel")}
+    onConfirm={action("onConfirm")}
+    />)
