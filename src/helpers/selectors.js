@@ -1,5 +1,3 @@
-import axios from "axios";
-
 
 export function getAppointmentsForDay(state, day) {
   const dayObject = state.days.find((elm) => {
