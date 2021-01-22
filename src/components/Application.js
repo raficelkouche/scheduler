@@ -11,9 +11,28 @@ export default function Application(props) {
   
   const [state, setState] = useState({ day: "Monday", days: [], appointments: {}, interviewers: {} });
   const setDay = day => setState({ ...state,day });
+  
+  //These functions will get both appointments/interviewers for a specific day
   const dailyAppointments = getAppointmentsForDay(state, state.day)
   const interviewers = getInterviewersForDay(state, state.day)
   
+  /*This will be called once the save button on the Form is clicked
+  It will take in the appointment id and the interview object*/
+  const bookInterview = (id,interview) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: {...interview}
+    }
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    }
+    setState({
+      ...state,
+      appointments
+    })
+  };
+ 
   const appointments =  dailyAppointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview)
       return ( 
@@ -21,8 +40,9 @@ export default function Application(props) {
           key={appointment.id}
           id={appointment.id}
           time={appointment.time}
-          interview={interview}
-          interviewers={interviewers}
+          interview={interview}           //The interviewer's id, name and avatar if an interview exists
+          interviewers={interviewers}     //Group of interviewers available on that specific day
+          bookInterview={bookInterview}   //function that will take in the appointment id and the interview object
         />
       );
     });
