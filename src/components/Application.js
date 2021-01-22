@@ -21,16 +21,21 @@ export default function Application(props) {
   const bookInterview = (id,interview) => {
     const appointment = {
       ...state.appointments[id],
-      interview: {...interview}
+      interview: { ...interview }
     }
     const appointments = {
       ...state.appointments,
       [id]: appointment
     }
-    setState({
-      ...state,
-      appointments
-    })
+    //push the new appointment data to the database
+    return axios.put(`http://localhost:8001/api/appointments/${id}`,{interview})
+            .then(response => {
+              console.log(response.status)
+              setState(prev => ({...prev,appointments}))
+            })
+            .catch(error => {
+              console.log("error: ", error.response)
+            })
   };
  
   const appointments =  dailyAppointments.map((appointment) => {
