@@ -28,14 +28,31 @@ export default function Application(props) {
       [id]: appointment
     }
     //push the new appointment data to the database
-    return axios.put(`http://localhost:8001/api/appointments/${id}`,{interview})
-            .then(response => {
-              console.log(response.status)
-              setState(prev => ({...prev,appointments}))
-            })
-            .catch(error => {
-              console.log("error: ", error.response)
-            })
+    return (
+      axios.put(`http://localhost:8001/api/appointments/${id}`,{interview})
+        .then(response => {
+          console.log(response.status)
+          setState(prev => ({...prev,appointments}))
+        })
+    );
+  };
+
+  //Function to delete an appointment
+  const cancelInterview = (id) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    return(
+      axios.delete(`http://localhost:8001/api/appointments/${id}`)
+        .then(() => {
+          setState(prev => ({...prev, appointments}))
+        })
+    )
   };
  
   const appointments =  dailyAppointments.map((appointment) => {
@@ -45,9 +62,10 @@ export default function Application(props) {
           key={appointment.id}
           id={appointment.id}
           time={appointment.time}
-          interview={interview}           //The interviewer's id, name and avatar if an interview exists
-          interviewers={interviewers}     //Group of interviewers available on that specific day
-          bookInterview={bookInterview}   //function that will take in the appointment id and the interview object
+          interview={interview}             //The interviewer's id, name and avatar if an interview exists
+          interviewers={interviewers}       //Group of interviewers available on that specific day
+          bookInterview={bookInterview}     //function that will take in the appointment id and the interview object
+          cancelInterview={cancelInterview} //function that will delete an interview
         />
       );
     });
