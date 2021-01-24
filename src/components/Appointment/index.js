@@ -26,21 +26,25 @@ export default function Appointment(props){
   );
   //helper function to save an interview
   const save = (name, interviewer) => {
-    const interview = {
-      student: name,
-      interviewer
-    };
-
-    transition(SAVE);
-    
-    props.bookInterview(props.id, interview)
-      .then(() => {
-        transition(SHOW)
-      })
-      .catch((error) => {
-        console.log("error: ", error.response)
-        transition(ERROR_SAVE, true);
-    });
+    if (!name || ! interviewer) {
+      alert("Please enter your name & select an interviewer");
+    } else {
+      const interview = {
+        student: name,
+        interviewer
+      };
+  
+      transition(SAVE);
+      
+      props.bookInterview(props.id, interview)
+        .then(() => {
+          transition(SHOW)
+        })
+        .catch((error) => {
+          console.log("error: ", error.response)
+          transition(ERROR_SAVE, true);
+      });
+    }
   };
 
   //helper function to delete a booked interview

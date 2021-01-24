@@ -60,7 +60,6 @@ export default function useApplicationData() {
     return (
       axios.put(`/api/appointments/${id}`, { interview })
       .then(response => {
-        console.log(response.status)
         const days =updateSpotsForDay(id, appointments)     //update the days object with the proper spots
         setState(prev => ({ ...prev, appointments, days }))
      
