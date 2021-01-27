@@ -6,7 +6,7 @@ import Appointment from "components/Appointment";
 import {getAppointmentsForDay, getInterviewersForDay, getInterview} from "../helpers/selectors";
 import useApplicationData from "../../src/hooks/useApplicationData"
 
-export default function Application(props) {
+export default function Application() {
   const {
     state,
     setDay,
