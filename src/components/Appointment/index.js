@@ -1,11 +1,10 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-//import Header from "components/Appointment/Header.js";
-import Header from "./Header.js"
+import Status from "components/Appointment/Status.js"
+import Header from "components/Appointment/Header.js";
 import Show from "components/Appointment/Show.js";
 import Empty from "components/Appointment/Empty.js";
-import Status from "components/Appointment/Status.js"
 import Confirm from "components/Appointment/Confirm.js"
 import Form from "components/Appointment/Form.js";
 import Error from "components/Appointment/Error.js";
