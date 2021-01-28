@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, cleanup } from "@testing-library/react";
-import Appointment from '../Appointment/index'
+import Appointment from '../Appointment/index.js'
 
 afterEach(cleanup);
 
