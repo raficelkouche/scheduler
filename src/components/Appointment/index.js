@@ -1,14 +1,14 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-import Status from "components/Appointment/Status.js"
-import Header from "components/Appointment/Header.js";
-import Show from "components/Appointment/Show.js";
-import Empty from "components/Appointment/Empty.js";
-import Confirm from "components/Appointment/Confirm.js"
-import Form from "components/Appointment/Form.js";
-import Error from "components/Appointment/Error.js";
-import useVisualMode from "../../hooks/useVisualMode.js";
+import Status from "components/Appointment/Status"
+import Show from "components/Appointment/Show";
+import Empty from "components/Appointment/Empty";
+import Confirm from "components/Appointment/Confirm"
+import Form from "components/Appointment/Form";
+import Error from "components/Appointment/Error";
+import useVisualMode from "../../hooks/useVisualMode";
+import Header from "components/Appointment/header";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
