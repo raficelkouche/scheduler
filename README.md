@@ -1,7 +1,8 @@
 # Interview Scheduler
 An SPA that allows users to book and manage interviews built using React. The application has been deployed to Netlify and can be reached on the following URL:
 
-https://tender-goldberg-b41ce6.netlify.app/
+Netlify: https://tender-goldberg-b41ce6.netlify.app/
+Server: https://schedulerizer.herokuapp.com/
 
 ### Screenshots
 !["Main View"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-home.png)
