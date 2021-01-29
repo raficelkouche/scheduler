@@ -1,10 +1,9 @@
 import React from "react";
-
 import "components/Application.scss";
-import { DayList } from "components/DayList"
-import Appointment from "components/Appointment/index"
+import { DayList } from "components/DayList";
+import Appointment from "components/Appointment/index";
 import {getAppointmentsForDay, getInterviewersForDay, getInterview} from "../helpers/selectors";
-import useApplicationData from "../../src/hooks/useApplicationData"
+import useApplicationData from "../../src/hooks/useApplicationData";
 
 export default function Application() {
   const {
@@ -15,11 +14,11 @@ export default function Application() {
   } = useApplicationData();
   
   //These functions will get both appointments/interviewers for a specific day
-  const dailyAppointments = getAppointmentsForDay(state, state.day)
-  const interviewers = getInterviewersForDay(state, state.day)
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const interviewers = getInterviewersForDay(state, state.day);
  
   const appointments =  dailyAppointments.map((appointment) => {
-      const interview = getInterview(state, appointment.interview)
+      const interview = getInterview(state, appointment.interview);
       return ( 
         <Appointment
           key={appointment.id}
@@ -32,8 +31,6 @@ export default function Application() {
         />
       );
     });
-  
-  
   
   return (
     <main className="layout">
@@ -63,4 +60,4 @@ export default function Application() {
       </section>
     </main>
   );
-}
+};

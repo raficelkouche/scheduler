@@ -1,5 +1,4 @@
 import React from "react";
-
 import "components/Appointment/styles.scss";
 import Status from "components/Appointment/Status"
 import Show from "components/Appointment/Show";
@@ -32,7 +31,7 @@ export default function Appointment(props){
     };
 
     transition(SAVE);
-    
+    //Function declaration in useApplicationData hook
     props.bookInterview(props.id, interview)
       .then(() => {
         transition(SHOW)
@@ -45,6 +44,7 @@ export default function Appointment(props){
   //helper function to delete a booked interview
   const deleteInterview = () => {
     transition(DELETE,true)
+
     props.cancelInterview(props.id)
       .then(() => {
         transition(EMPTY);
@@ -52,7 +52,8 @@ export default function Appointment(props){
       .catch(error => {
         transition(ERROR_DELETE,true);
       });
-  }
+  };
+  
   return (
     <article data-testid="appointment" className="appointment">
       <Header time={props.time} />
@@ -94,4 +95,4 @@ export default function Appointment(props){
       {mode === ERROR_DELETE && <Error message="Could not cancel appointment" onClose={back}/>}
     </article>
   );
-}
+};

@@ -1,6 +1,5 @@
 import React from 'react';
-
-import DayListItem from '../components/DayListItem'
+import DayListItem from '../components/DayListItem';
 
 export function DayList(props) {
   const { days, day, setDay } = props;
@@ -9,6 +8,6 @@ export function DayList(props) {
     return (
       <DayListItem key={elm.id} {...elm} setDay={setDay}/>
       )
-    })
+    });
  return daysArray;
 };

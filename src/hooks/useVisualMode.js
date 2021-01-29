@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
@@ -8,11 +8,11 @@ export default function useVisualMode(initial) {
     (replace) ? setHistory(prev => ([...prev.slice(0,-1), newMode]))
               : setHistory(prev => ([...prev, newMode])) 
     
-    setMode(newMode)
-  }
-
+    setMode(newMode);
+  };
+  
   const back = () => {
-    if (history.length < 2) {
+    if (history.length < 2) {   //Don't go back if there is only 1 mode in the array
       return;
     }
     setMode(history[history.length - 2])

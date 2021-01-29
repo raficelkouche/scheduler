@@ -19,14 +19,15 @@ export default function useApplicationData() {
         }));
       })
       .catch(err => console.log(err))
-  }, [])
+  }, []);
+
   //helper function to calculate remaining spots on a given day
   const updateSpotsForDay = (id, appointments) => {
     let indexOfDay; //tracking the index of the day will help in the map function below
     
     const actualDay = state.days.find((elm,index) => {
-      indexOfDay = index
-      return elm.name === state.day
+      indexOfDay = index;
+      return elm.name === state.day;
     })
     
     const day = {...actualDay, spots: 0}; //this variable is to avoid mutating state directly
@@ -41,7 +42,7 @@ export default function useApplicationData() {
       return (index === indexOfDay) ? day : elm
     });
 
-    return days
+    return days;
   };
 
   /*This will be called once the save button on the Form is clicked
@@ -50,18 +51,18 @@ export default function useApplicationData() {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
-    }
+    };
     const appointments = {
       ...state.appointments,
       [id]: appointment
-    }
+    };
 
     //push the new appointment data to the database
     return (
       axios.put(`/api/appointments/${id}`, { interview })
       .then(response => {
-        const days =updateSpotsForDay(id, appointments)     //update the days object with the proper spots
-        setState(prev => ({ ...prev, appointments, days }))
+        const days =updateSpotsForDay(id, appointments);     //update the days object with the proper spots
+        setState(prev => ({ ...prev, appointments, days }));
      
       })
     );
@@ -80,11 +81,11 @@ export default function useApplicationData() {
     return (
       axios.delete(`/api/appointments/${id}`)
       .then(() => {
-        const days = updateSpotsForDay(id, appointments)
-        setState(prev => ({ ...prev, appointments, days }))
+        const days = updateSpotsForDay(id, appointments);
+        setState(prev => ({ ...prev, appointments, days }));
       })
     )
   };
 
-  return { state, setDay, bookInterview, cancelInterview}
-}
+  return { state, setDay, bookInterview, cancelInterview};
+};

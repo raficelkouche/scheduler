@@ -1,6 +1,5 @@
-import React from 'react'
-
-import Button from "components/Button"
+import React from 'react';
+import Button from "components/Button";
 
 export default function Confirm(props){
   const {message, onCancel, onConfirm} = props;
@@ -13,4 +12,4 @@ export default function Confirm(props){
       </section>
     </main>
   );
-}
+};
