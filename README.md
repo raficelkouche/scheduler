@@ -16,7 +16,7 @@ Netlify: https://tender-goldberg-b41ce6.netlify.app/
 !["Display Booked Appointment"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-show.png)
 
 ## Setup
-- Fork and clone the following repository since it contains all the server-side code: !["scheduler-api"](https://github.com/lighthouse-labs/scheduler-api).
+- Fork and clone the following repository since it contains all the server-side code: [scheduler-api](https://github.com/lighthouse-labs/scheduler-api).
 
 - After making sure that the server is running, install the dependencies on the client-side:
  ```sh 
