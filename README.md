@@ -3,8 +3,6 @@ A single-page application that allows users to book and manage interviews, built
 
 Netlify: https://tender-goldberg-b41ce6.netlify.app/
 
-Server: https://schedulerizer.herokuapp.com/
-
 ## Features
 - Schedule an interview based on availability.
 - Pick an interviewer from the list.
@@ -18,7 +16,7 @@ Server: https://schedulerizer.herokuapp.com/
 !["Display Booked Appointment"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-show.png)
 
 ## Setup
-- Fork and clone the following repository since it contains all the server-side code: ![scheduler-api](https://github.com/lighthouse-labs/scheduler-api).
+- Fork and clone the following repository since it contains all the server-side code: !["scheduler-api"](https://github.com/lighthouse-labs/scheduler-api).
 
 - After making sure that the server is running, install the dependencies on the client-side:
  ```sh 
