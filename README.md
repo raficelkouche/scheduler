@@ -8,13 +8,7 @@ Netlify: https://tender-goldberg-b41ce6.netlify.app/
 - Pick an interviewer from the list.
 - Delete an interview.
 
-## Screenshots
-!["Main View"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-home.png)
-
-!["New Appointment Form"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-new.png)
-
-!["Display Booked Appointment"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-show.png)
-
+## Preview
 ![Demo](docs/demo.gif)
 
 ## Setup
