@@ -15,6 +15,8 @@ Netlify: https://tender-goldberg-b41ce6.netlify.app/
 
 !["Display Booked Appointment"](https://github.com/raficelkouche/scheduler/blob/master/docs/scheduler-show.png)
 
+![Demo](docs/demo.gif)
+
 ## Setup
 - Fork and clone the following repository since it contains all the server-side code: [scheduler-api](https://github.com/lighthouse-labs/scheduler-api).
 
